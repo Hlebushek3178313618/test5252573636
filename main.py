@@ -1,6 +1,5 @@
 import os
 import random
-from gtts import gTTS # импорт библиотеки, которую мы скачали
 from flask import Flask, request
 from telebot import types
 
