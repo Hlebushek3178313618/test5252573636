@@ -1,5 +1,6 @@
 import os
-
+import random
+from gtts import gTTS # импорт библиотеки, которую мы скачали
 from flask import Flask, request
 from telebot import types
 
@@ -11,12 +12,6 @@ server = Flask(__name__)
 
 
 #КОД ТЕЛЕБОТА
-from IPython.lib.display import Audio
-import telebot
-import random
-from telebot import types
-from gtts import gTTS # импорт библиотеки, которую мы скачали
-bot = telebot.TeleBot("5247457206:AAFAMn-l0VUmGxNYjq5USBAdGVMhqSVLVtQ")
 
 anekdot=["Новогодняя ночь. На операционном столе орёт благим матом парень с аппендицитом. Бьют куранты, доктор надевает марлевую маску: — Ну-с, коллеги, с Новым годом, прошу всех к столу!",
 "— Доктор, наша маленькая дочь стабильно теряет в весе. Мы и физические упражнения с ней делаем, и много на воздухе бываем.. — А как она ест? — Ах, черт подери, я чувствовала что мы что-то забываем!",
@@ -101,7 +96,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://<test5252573636>.herokuapp.com/' + TOKEN)
+    bot.set_webhook(url='https://test5252573636.herokuapp.com/' + TOKEN)
     return "!", 200
 
 if __name__ == "__main__":
